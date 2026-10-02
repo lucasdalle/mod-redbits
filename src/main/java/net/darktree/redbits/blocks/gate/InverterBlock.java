@@ -53,7 +53,7 @@ public class InverterBlock extends DiodeBlock {
 
 	@Override
 	public boolean shouldRedstoneWireConnectTo(BlockState state, BlockGetter level, BlockPos pos, @Nullable Direction direction) {
-		return state.getValue(RepeaterBlock.FACING).getAxis() == direction.getAxis();
+		return direction != null && state.getValue(RepeaterBlock.FACING).getAxis() == direction.getAxis();
 	}
 
 }
